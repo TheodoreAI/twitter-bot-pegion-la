@@ -30,27 +30,47 @@ timelines, tweets, users, followers, methods
 for own account, likes, blocking users, searches, trends, stremaing: https://tweepy.readthedocs.io/en/latest/api.html"""
 
 
-# To get the info from your home timeline:
-
-# timeline = api_object.home_timeline()
-# for twt in timeline:
-# 	print(f"{twt.user.name} said {twt.text}")
 
 
-# To send a tweet using the update_status method
-
-api_object.update_status("tweeting from a text editor")
 # To get info of a specific person on the twitter home timeline
 
 
-class TwitterBot(object):
+class TwitterBot:
 	"""
 		The real coding begins.
 
 	"""
-	def __init__(self, arg):
-		super(TwitterBot, self).__init__()
-		self.arg = arg
+	def __init__(self):
+		self.str_status_array = []
 
-	def get_timeline(self, username):
+	def get_timeline(self):
+		# Makes a status update from this function
+		# To get the info from your home timeline:
+
+		# timeline = api_object.home_timeline()
+		# for twt in timeline:
+		# 	print(f"{twt.user.name} said {twt.text}")
+
 		pass
+
+	def add_status(self, text):
+		# Reads the text from a .txt file in the root directory.
+		with open('word_doc_txt.txt') as f:
+			lines = f.readlines()
+			self.str_status_array.append(lines)
+			return lines
+
+
+
+# To send a tweet using the update_status method
+
+# api_object.update_status("tweeting from a text editor")
+make_twt_bot = TwitterBot()
+sent_text = TwitterBot.add_status()
+print(sent_text)
+
+
+
+
+
+
