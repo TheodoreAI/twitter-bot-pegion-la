@@ -43,6 +43,9 @@ class TwitterBot:
 	def __init__(self):
 		self.str_status_array = []
 
+	def get_me(self):
+		return api_object.me()
+
 	def get_timeline(self):
 		# Makes a status update from this function
 		# To get the info from your home timeline:
@@ -54,20 +57,51 @@ class TwitterBot:
 		pass
 
 	def add_status(self, text):
-		# Reads the text from a .txt file in the root directory.
-		with open('word_doc_txt.txt') as f:
+		# adds status to the array
+		self.str_status_array.append(lines)
+			
+
+	def get_status(self):
+		# USED FOR TESTING OBJECT: returns a string from txt
+		with open('word_doc_txt.txt', 'r') as f:
 			lines = f.readlines()
-			self.str_status_array.append(lines)
 			return lines
+	def get_user(self, username):
+		# returns the user 
+		return api_object.get_user(username)
+
+	def get_trendings(self):
+		# Returns the trends in a place
+	
+	    return api_object.trends_place(1)
+
+	def get_friends(self, username):
+		# Returns the friends using a username
+		return api_object.friends(username)
+	def get_saved_searches(self, ID):
+		# Returns the saved searches
+		return api_object.get_saved_search(ID)
+
+	def get_dms(self):
+		return api_object.list_direct_messages()
 
 
 
-# To send a tweet using the update_status method
 
 # api_object.update_status("tweeting from a text editor")
-make_twt_bot = TwitterBot()
-sent_text = TwitterBot.add_status()
-print(sent_text)
+# make_twt_bot = TwitterBot()
+# sent_text = TwitterBot.add_status()
+# print(sent_text)
+
+
+# if __name__ == "__main__":
+	# To send a tweet using the update_status method
+
+
+
+
+
+
 
 
 
