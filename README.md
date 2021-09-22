@@ -4,9 +4,9 @@ twitter-bot is a Python3 library for using tweepy API from twitter to make a bot
 
 ## Installation
 
-# You are going to need the dependencies in the requirements file.
-# You are also going to to make an .env file to safely store your apps keys. 
-# Or you can use environment variables.
+#### You are going to need the dependencies in the requirements file.
+#### You are also going to to make an .env file to safely store your apps keys. 
+#### Or you can use environment variables.
 
 ```bash
 pip install twitter-bot
